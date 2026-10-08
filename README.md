@@ -2,6 +2,8 @@
 
 Next.js App Router, TypeScript, React, and Tailwind CSS v4 implementation of the Nextora WordPress/WooCommerce theme landing-page design.
 
+![Nextora landing page preview](https://pub-0645c3b9d3674132af6b362484df0f3c.r2.dev/Nextora/landing/nextora-landing-thumb.webp)
+
 ## Run
 
 ```sh
