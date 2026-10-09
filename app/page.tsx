@@ -171,18 +171,14 @@ export default function Home() {
             </div>
             <div className="grid-2 feature-grid">
               <article className="card" data-od-id="feature-editing">
-                <div className="feature-demo">
-                  <div className="mini-toolbar">
-                    {"＋   Query Loop   /   Hero   /   Pattern"}
-                  </div>
-                  <div className="mini-heading">
-                    {"60+ Pre-composed"}
-                    <br />
-                    {"block patterns."}
-                  </div>
-                  <span className="meta">
-                    {"PATTERN INSERTER PREVIEW"}
-                  </span>
+                <div className="feature-demo feature-demo-image">
+                  <img
+                    src="https://pub-0645c3b9d3674132af6b362484df0f3c.r2.dev/Nextora/landing/blocks.webp"
+                    alt="Nextora block pattern inserter with pre-composed page layouts"
+                    width="800"
+                    height="352"
+                    loading="lazy"
+                  />
                 </div>
                 <span className="meta">
                   {"01 / 60+ CURATED PATTERNS"}
@@ -195,25 +191,14 @@ export default function Home() {
                 </p>
               </article>
               <article className="card" data-od-id="feature-commerce">
-                <div className="feature-demo">
-                  <div className="commerce-placeholder">
-                    <span>
-                      {"＋"}
-                      <small>
-                        {"PRODUCT PREVIEW"}
-                      </small>
-                    </span>
-                    <div>
-                      <div className="mini-heading">
-                        {"High-converting"}
-                        <br />
-                        {"store templates."}
-                      </div>
-                      <span className="meta">
-                        {"WOOCOMMERCE CART & CHECKOUT"}
-                      </span>
-                    </div>
-                  </div>
+                <div className="feature-demo feature-demo-image">
+                  <img
+                    src="https://pub-0645c3b9d3674132af6b362484df0f3c.r2.dev/Nextora/landing/woo.webp"
+                    alt="Nextora WooCommerce store builder with product, cart, and checkout layouts"
+                    width="800"
+                    height="352"
+                    loading="lazy"
+                  />
                 </div>
                 <span className="meta">
                   {"02 / COMMERCE WITHOUT COMPROMISE"}
