@@ -27,13 +27,14 @@ npm run lint
 - `components/gallery.tsx`, `testimonials.tsx`, `walkthroughs.tsx`: React-owned interactive state and keyboard controls.
 - `components/notice-button.tsx`: native modal dialogs with backdrop dismissal and focus restoration.
 - `components/page-motion.tsx`: GSAP hero, scroll, hover, and FAQ motion with reduced-motion handling and cleanup.
+- `components/architecture-story.tsx`: five remotely hosted product demos; only the selected video is mounted, muted playback advances on completion, and visibility/reduced-motion/error states preserve manual controls.
 - `components/block-scene.tsx`: module-based Three.js sculpture with resize, visibility, and disposal handling.
 
 Design source: project `36b74e5a-9b07-4c6b-9157-44d74236b0c3`, `nextora-landing.html`. The design handoff was obtained from the agent in `w3`; implementation was divided among foundation, interactions, and motion agents, with lead integration and browser verification.
 
 ## Source content limitations
 
-The supplied design contains labelled placeholders rather than released product screenshots, video files, verified testimonial content, or a theme ZIP/download endpoint. They remain explicitly labelled, and release buttons display the supplied release notice. No testimonials, downloads, or video playback are fabricated.
+The hero product demonstrations are supplied H.264 MP4 recordings hosted on the Nextora R2 origin. Their adjacent descriptions are limited to filename-supported capabilities. The remaining labelled placeholders do not claim released screenshots, verified testimonial content, or a theme ZIP/download endpoint; release buttons display the supplied release notice.
 
 Fonts follow the design's local system stacks: Iowan Old Style/Charter/Baskerville/Times New Roman for display and Avenir Next/system sans-serif for body. Rendering varies on operating systems without those fonts.
 

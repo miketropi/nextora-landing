@@ -1,4 +1,4 @@
-import { BlockScene } from "@/components/block-scene"
+import { ArchitectureStory } from "@/components/architecture-story"
 import { Gallery } from "@/components/gallery"
 import { NoticeButton } from "@/components/notice-button"
 import { PageMotion } from "@/components/page-motion"
@@ -41,79 +41,10 @@ export default function Home() {
             </div>
             <div className="hero-stage" data-od-id="hero-media">
               <div className="stage-caption">
-                <span>
-                  {"01 / NATIVE GUTENBERG ARCHITECTURE"}
-                </span>
-                <span>
-                  {"FULL SITE EDITING & WOOCOMMERCE"}
-                </span>
+                <span>{"01 / NEXTORA IN ACTION"}</span>
+                <span>{"DESIGN · NAVIGATION · COMMERCE"}</span>
               </div>
-              <div className="composition" aria-hidden="true">
-                <div className="editor-frame">
-                  <div className="editor-bar">
-                    <span>
-                      {"nextora / site-editor"}
-                    </span>
-                    <span>
-                      {"＋   ◇   theme.json"}
-                    </span>
-                  </div>
-                  <div className="editor-body">
-                    <small>
-                      {"GUTENBERG BLOCK SYSTEM"}
-                    </small>
-                    <div className="editor-heading">
-                      {"Clean blocks."}
-                      <br />
-                      {"Zero bloat."}
-                    </div>
-                    <div className="editor-lines">
-                      <i />
-                      <i />
-                    </div>
-                    <div className="editor-link">
-                      {"60+ Block Patterns   ↗"}
-                    </div>
-                  </div>
-                </div>
-                <div className="media-tile">
-                  <span className="cross">
-                    {"＋"}
-                  </span>
-                  <span>
-                    {"STARTER SITE PREVIEW"}
-                    <br />
-                    <small>
-                      {"Visual placeholder · 4:3"}
-                    </small>
-                  </span>
-                </div>
-                <div className="style-tile">
-                  <span>
-                    {"GLOBAL STYLES"}
-                  </span>
-                  <strong>
-                    {"Aa"}
-                  </strong>
-                  <div>
-                    <i />
-                    <i />
-                    <i />
-                  </div>
-                  <small>
-                    {"Design tokens & theme.json"}
-                  </small>
-                </div>
-                <BlockScene />
-              </div>
-              <div className="stage-bottom">
-                <span>
-                  {"Pure WordPress blocks. Instant performance."}
-                </span>
-                <span className="meta">
-                  {"Visual demo composition · customize directly in Site Editor"}
-                </span>
-              </div>
+              <ArchitectureStory />
             </div>
             <div className="compatibility">
               <span className="meta">
