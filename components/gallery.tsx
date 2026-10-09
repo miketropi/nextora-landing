@@ -173,13 +173,24 @@ export function Gallery() {
           </div>
         </div>
         <div className="grid-2-1">
-          <div className="ph-img wide gallery-media" data-od-id="gallery-placeholder" ref={mediaRef}>
-            <span className="cross">＋</span>
-            <div>
-              <strong id="gallery-label" data-motion-dynamic>{layout.label}</strong>
-              <br />
-              <span className="meta">Site preview placeholder · 16:9</span>
-            </div>
+          <div className={`ph-img wide gallery-media${active === 0 ? " has-preview" : ""}`} data-od-id="gallery-placeholder" ref={mediaRef}>
+            {active === 0 ? (
+              <img
+                src="https://pub-0645c3b9d3674132af6b362484df0f3c.r2.dev/Nextora/landing/nextora-landing-preview.jpg"
+                alt="Nextora agency and SaaS starter website preview"
+                width="1242"
+                height="700"
+              />
+            ) : (
+              <>
+                <span className="cross">＋</span>
+                <div>
+                  <strong id="gallery-label" data-motion-dynamic>{layout.label}</strong>
+                  <br />
+                  <span className="meta">Site preview placeholder · 16:9</span>
+                </div>
+              </>
+            )}
           </div>
           <div className="stack gallery-copy" ref={copyRef}>
             <p className="meta" id="gallery-category" data-motion-dynamic>{`${number} / ${layout.category}`}</p>
