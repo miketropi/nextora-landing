@@ -381,7 +381,7 @@ export default function Home() {
         <section className="section cta" id="download" data-od-id="call-to-action">
           <div className="container hero-center">
             <p className="eyebrow">
-              {"JOIN HUNDREDS OF MODERN WORDPRESS BUILDERS"}
+              {"FREE WORDPRESS THEME · BUILT BY BEPLUSTHEME"}
             </p>
             <h2 data-od-id="element-33">
               {"Build faster."}
@@ -391,13 +391,13 @@ export default function Home() {
               </em>
             </h2>
             <p className="lead" style={{"margin": "24px auto 32px"}}>
-              {"A modern Full Site Editing block theme designed for speed, flexibility, and zero bloat."}
+              {"Nextora is completely free—no license fee, paid tier, or feature gate."}
               <br />
-              {"Experience native WordPress the way it was meant to be."}
+              {"It is developed by Beplustheme, a team with years of WordPress experience and an established author presence across Envato, Shopify, and WordPress."}
             </p>
-            <NoticeButton id="download-button" className="btn btn-primary btn-arrow" data-od-id="download-button" title="Get Nextora Theme" body="The Nextora production theme package (ZIP), 60+ block patterns, and documentation are finalizing for release. Early access will open shortly.">Get Nextora Theme</NoticeButton>
+            <NoticeButton id="download-button" className="btn btn-primary btn-arrow" data-od-id="download-button" title="Get Nextora Theme" body="Nextora will be available completely free. The production theme package (ZIP), 60+ block patterns, and documentation are finalizing for release by Beplustheme.">Get Nextora Free</NoticeButton>
             <p className="meta" style={{"marginTop": "20px"}}>
-              {"Compatible with WordPress 6.7+ · WooCommerce 9.0+ · GPL Licensed · Theme package coming soon"}
+              {"Completely free · GPL Licensed · WordPress 6.7+ · WooCommerce 9.0+ · Theme package coming soon"}
             </p>
           </div>
         </section>

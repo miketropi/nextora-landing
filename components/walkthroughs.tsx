@@ -1,63 +1,70 @@
 "use client"
 
 import { useState } from "react"
-import { NoticeButton } from "./notice-button"
 
 interface Walkthrough {
   hook: string
   title: string
   subtitle: string
   description: string
+  videoSrc: string
+  videoWidth: number
+  videoHeight: number
 }
+
+const videoBase = "https://pub-0645c3b9d3674132af6b362484df0f3c.r2.dev/Nextora/landing/"
 
 const walkthroughs: Walkthrough[] = [
   {
-    hook: "video-home",
-    title: "Build a custom homepage in 15 minutes",
-    subtitle: "Native block editor & visual pattern assembly",
-    description:
-      "Assemble a complete homepage using native WordPress blocks and pre-built patterns.",
+    hook: "video-colors",
+    title: "Find your site's color direction",
+    subtitle: "Preset colors & live front-end preview",
+    description: "Explore Nextora's preset colors on the front end and see your site's look change in context.",
+    videoSrc: `${videoBase}frontend-switch-preset-colors.mp4`,
+    videoWidth: 1780,
+    videoHeight: 1080,
   },
   {
-    hook: "video-styles",
-    title: "Brand your site via Global Styles",
-    subtitle: "Typography pairings, color palettes & theme.json",
-    description:
-      "Customize global typography, color tokens, and layout spacing across all templates at once.",
+    hook: "video-megamenu",
+    title: "Build richer site navigation",
+    subtitle: "Mega menu & organized visitor pathways",
+    description: "See Nextora's mega menu in action, with room to organize links and guide visitors through your site.",
+    videoSrc: `${videoBase}megamenu-ready.mp4`,
+    videoWidth: 1738,
+    videoHeight: 1080,
   },
   {
     hook: "video-store",
-    title: "Launch a high-converting WooCommerce shop",
-    subtitle: "Product archives, mini-cart & fast checkout",
-    description:
-      "Configure product grids, cart slideout, and single-page checkout optimized for conversions.",
+    title: "Bring your WooCommerce store to life",
+    subtitle: "Native storefront integration",
+    description: "Explore Nextora's native WooCommerce experience, designed to make your store feel like part of your site.",
+    videoSrc: `${videoBase}native-woocommerce.mp4`,
+    videoWidth: 1780,
+    videoHeight: 1080,
   },
   {
-    hook: "video-patterns",
-    title: "Speed up builds with 60+ Block Patterns",
-    subtitle: "One-click insertion & section modularity",
-    description:
-      "Combine modular block patterns to build bespoke landing pages in a fraction of the time.",
+    hook: "video-import",
+    title: "Import a ready-made page",
+    subtitle: "One-click import & flexible layouts",
+    description: "Import a ready-made page in one click, then make the layout your own.",
+    videoSrc: `${videoBase}one-click-import-page.mp4`,
+    videoWidth: 1716,
+    videoHeight: 1080,
   },
   {
-    hook: "video-mobile",
-    title: "Optimize for Core Web Vitals & mobile touch",
-    subtitle: "Sub-second load times & responsive tuning",
-    description:
-      "Ensure fluid typography, fast server response, and 95+ Google PageSpeed mobile scores.",
+    hook: "video-search",
+    title: "Help visitors discover content",
+    subtitle: "Spotlight search & focused results",
+    description: "See Nextora's spotlight search in action and give visitors a focused way to find content.",
+    videoSrc: `${videoBase}spotlight-search.mp4`,
+    videoWidth: 1192,
+    videoHeight: 1080,
   },
 ]
 
 export function Walkthroughs() {
   const [selected, setSelected] = useState(0)
-  const [previewLabel, setPreviewLabel] = useState("Open homepage walkthrough placeholder")
-
   const walkthrough = walkthroughs[selected]
-
-  function select(index: number) {
-    setSelected(index)
-    setPreviewLabel(`Open ${walkthroughs[index].title} placeholder`)
-  }
 
   return (
     <section className="section" id="showcase" data-od-id="video-showcase">
@@ -79,23 +86,21 @@ export function Walkthroughs() {
         </div>
         <div className="grid-2-1">
           <div className="walkthrough-sticky">
-            <NoticeButton
-              className="ph-img wide video-stage"
-              id="video-preview"
-              data-od-id="video-preview"
-              data-motion-dynamic
-              aria-label={previewLabel}
-              title={walkthrough.title}
-              body={`This video walkthrough demonstrates ${walkthrough.title.toLowerCase()}. The complete video course and theme documentation will be included with the official theme release.`}
-            >
-              <span className="play">
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-                  <path d="M7 4.5v15L19 12 7 4.5Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-                </svg>
-              </span>
-              <span id="video-label" data-motion-dynamic>{walkthrough.title}</span>
-              <span className="meta">VIDEO PLACEHOLDER · 16:9 · MEDIA TO BE ADDED</span>
-            </NoticeButton>
+            <div className="walkthrough-video-stage" id="video-preview" data-od-id="video-preview" data-motion-dynamic>
+              <video
+                key={walkthrough.hook}
+                controls
+                muted
+                playsInline
+                preload="metadata"
+                width={walkthrough.videoWidth}
+                height={walkthrough.videoHeight}
+                aria-label={`${walkthrough.title} walkthrough`}
+              >
+                <source src={walkthrough.videoSrc} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
             <p className="meta" id="video-description" data-motion-dynamic>
               {walkthrough.description}
             </p>
@@ -108,7 +113,7 @@ export function Walkthroughs() {
                 aria-pressed={index === selected}
                 data-video={index}
                 data-od-id={item.hook}
-                onClick={() => select(index)}
+                onClick={() => setSelected(index)}
               >
                 <span className="meta">{String(index + 1).padStart(2, "0")}</span>
                 <span>
