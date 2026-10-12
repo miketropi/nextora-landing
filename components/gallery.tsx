@@ -11,6 +11,10 @@ interface GalleryLayout {
   category: string
   title: string
   description: string
+  imageSrc: string
+  imageAlt: string
+  imageWidth: number
+  imageHeight: number
 }
 
 const layouts: GalleryLayout[] = [
@@ -20,6 +24,10 @@ const layouts: GalleryLayout[] = [
     title: "Convert visitors with high-impact layouts.",
     description:
       "Designed for tech companies, consultancies, and digital agencies: lead capture heroes, feature matrices, interactive pricing tables, and case study query loops.",
+    imageSrc: "https://pub-0645c3b9d3674132af6b362484df0f3c.r2.dev/Nextora/landing/nextora-landing-preview.jpg",
+    imageAlt: "Nextora agency and SaaS starter website preview",
+    imageWidth: 1241,
+    imageHeight: 700,
   },
   {
     label: "WooCommerce Boutique",
@@ -27,6 +35,10 @@ const layouts: GalleryLayout[] = [
     title: "Sell products with high-converting store flows.",
     description:
       "Tailored for direct-to-consumer brands: sticky add-to-cart, product variant swatches, filtered catalogue grids, and distraction-free checkout.",
+    imageSrc: "https://pub-0645c3b9d3674132af6b362484df0f3c.r2.dev/Nextora/landing/nextora-store-demo.webp",
+    imageAlt: "Nextora WooCommerce boutique shop and checkout preview",
+    imageWidth: 1242,
+    imageHeight: 700,
   },
   {
     label: "Modern Publication",
@@ -34,6 +46,10 @@ const layouts: GalleryLayout[] = [
     title: "Engage readers with magazine-grade typography.",
     description:
       "Built for publishers, newsrooms, and content creators: multi-author bylines, reading time indicators, category query loops, and newsletter signup blocks.",
+    imageSrc: "https://pub-0645c3b9d3674132af6b362484df0f3c.r2.dev/Nextora/landing/8141ad46-31a9-4a64-a652-97c5a46cc7fa.webp",
+    imageAlt: "Nextora editorial publication website preview",
+    imageWidth: 1000,
+    imageHeight: 750,
   },
   {
     label: "Creative Portfolio",
@@ -41,6 +57,10 @@ const layouts: GalleryLayout[] = [
     title: "Showcase creative work with visual impact.",
     description:
       "Curated for architects, photographers, and independent studios: fullscreen masonry grids, interactive project sliders, and case study layouts.",
+    imageSrc: "https://pub-0645c3b9d3674132af6b362484df0f3c.r2.dev/Nextora/landing/b0e56f04-936e-4eee-9d03-7e412b730352.webp",
+    imageAlt: "Nextora creative portfolio and studio website preview",
+    imageWidth: 1000,
+    imageHeight: 750,
   },
 ]
 
@@ -173,24 +193,13 @@ export function Gallery() {
           </div>
         </div>
         <div className="grid-2-1">
-          <div className={`ph-img wide gallery-media${active === 0 ? " has-preview" : ""}`} data-od-id="gallery-placeholder" ref={mediaRef}>
-            {active === 0 ? (
-              <img
-                src="https://pub-0645c3b9d3674132af6b362484df0f3c.r2.dev/Nextora/landing/nextora-landing-preview.jpg"
-                alt="Nextora agency and SaaS starter website preview"
-                width="1242"
-                height="700"
-              />
-            ) : (
-              <>
-                <span className="cross">＋</span>
-                <div>
-                  <strong id="gallery-label" data-motion-dynamic>{layout.label}</strong>
-                  <br />
-                  <span className="meta">Site preview placeholder · 16:9</span>
-                </div>
-              </>
-            )}
+          <div className="ph-img wide gallery-media has-preview" data-od-id="gallery-placeholder" ref={mediaRef}>
+            <img
+              src={layout.imageSrc}
+              alt={layout.imageAlt}
+              width={layout.imageWidth}
+              height={layout.imageHeight}
+            />
           </div>
           <div className="stack gallery-copy" ref={copyRef}>
             <p className="meta" id="gallery-category" data-motion-dynamic>{`${number} / ${layout.category}`}</p>
