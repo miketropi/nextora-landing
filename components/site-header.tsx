@@ -53,7 +53,7 @@ export function SiteHeader() {
         <nav id="navigation" className={isOpen ? "open" : undefined} aria-label="Main navigation">
           {links.map(([id, label, designId]) => <a key={id} href={`#${id}`} data-od-id={designId}>{label}</a>)}
         </nav>
-        <a className="btn btn-secondary desktop-link" href="#download" data-od-id="element-6">Get Nextora ↗</a>
+        <a className="btn btn-secondary desktop-link" href="https://beplusthemes.com/products/nextora-wordpress-theme/" target="_blank" rel="noopener" data-od-id="element-6">Get Nextora ↗</a>
         <button ref={toggle} type="button" className="btn btn-secondary menu-toggle" aria-expanded={isOpen} aria-controls="navigation" data-od-id="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? "Close" : "Menu"}
         </button>

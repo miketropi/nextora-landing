@@ -42,11 +42,10 @@ const softBlurEase = cubicBezier(0.22, 1, 0.36, 1);
 
 /** Nodes whose text is owned or replaced at runtime by the interactive components. */
 const DYNAMIC_TEXT = [
-  // React re-renders these labels: the mobile menu toggle swaps Menu/Close, dialog content
-  // is rendered with useId ids, and the carousels/walkthrough/dialog write at runtime.
+  // React re-renders these labels: the mobile menu toggle swaps Menu/Close
+  // and the carousels/walkthrough write at runtime.
   ".menu-toggle",
   "[data-motion-dynamic]",
-  "dialog",
   "#gallery-count",
   "#gallery-label",
   "#gallery-category",
@@ -59,8 +58,6 @@ const DYNAMIC_TEXT = [
   "#testimonial-note",
   "#video-label",
   "#video-description",
-  "#notice-title",
-  "#notice-body",
 ].join(",");
 
 const CONTENT_CARDS = "article, .gallery-media, .quote:not(#testimonial-quote), .video-stage";
@@ -356,7 +353,7 @@ export function PageMotion() {
             if (!parent) continue;
             if (!/[\p{L}\p{N}]/u.test(node.textContent ?? "")) continue;
             if (parent.closest('svg,[aria-hidden="true"],.brand-mark')) continue;
-            // Leave runtime-mutated labels untouched (carousel / walkthrough / dialog).
+            // Leave runtime-mutated labels untouched (carousel / walkthrough).
             if (parent.closest(DYNAMIC_TEXT)) continue;
             nodes.push(node);
           }

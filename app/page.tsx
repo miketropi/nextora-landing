@@ -1,6 +1,5 @@
 import { ArchitectureStory } from "@/components/architecture-story"
 import { Gallery } from "@/components/gallery"
-import { NoticeButton } from "@/components/notice-button"
 import { PageMotion } from "@/components/page-motion"
 import { SiteHeader } from "@/components/site-header"
 import { Testimonials } from "@/components/testimonials"
@@ -31,10 +30,10 @@ export default function Home() {
                 {"Design agency-grade client sites, high-converting WooCommerce stores, and editorial publications natively in Gutenberg. No slow page builders, no code lock-in, and instant 99+ Core Web Vitals."}
               </p>
               <div className="hero-cta">
-                <a className="btn btn-primary btn-arrow" href="#download" data-od-id="hero-cta">
+                <a className="btn btn-primary btn-arrow" href="https://beplusthemes.com/products/nextora-wordpress-theme/" target="_blank" rel="noopener" data-od-id="hero-cta">
                   {"Get Nextora Theme"}
                 </a>
-                <a className="btn btn-ghost" href="#gallery" data-od-id="element-7">
+                <a className="btn btn-ghost" href="https://nextora-theme-preview.beplus-agency.cloud/" target="_blank" rel="noopener" data-od-id="element-7">
                   {"Explore Pre-builts ↗"}
                 </a>
               </div>
@@ -395,9 +394,11 @@ export default function Home() {
               <br />
               {"It is developed by Beplustheme, a team with years of WordPress experience and an established author presence across Envato, Shopify, and WordPress."}
             </p>
-            <NoticeButton id="download-button" className="btn btn-primary btn-arrow" data-od-id="download-button" title="Get Nextora Theme" body="Nextora will be available completely free. The production theme package (ZIP), 60+ block patterns, and documentation are finalizing for release by Beplustheme.">Get Nextora Free</NoticeButton>
+            <a id="download-button" className="btn btn-primary btn-arrow" data-od-id="download-button" href="https://beplusthemes.com/products/nextora-wordpress-theme/" target="_blank" rel="noopener">
+              {"Get Nextora Free"}
+            </a>
             <p className="meta" style={{"marginTop": "20px"}}>
-              {"Completely free · GPL Licensed · WordPress 6.7+ · WooCommerce 9.0+ · Theme package coming soon"}
+              {"Completely free · GPL Licensed · WordPress 6.7+ · WooCommerce 9.0+ · Nextora is ready"}
             </p>
           </div>
         </section>
